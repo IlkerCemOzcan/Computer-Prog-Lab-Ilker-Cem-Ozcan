@@ -1,1 +1,58 @@
+#include <iostream>
+
+using namespace std;
+
+struct Node {
+
+string data;
+struct Node *next;
+}Node;
+
+
+
+void addingfunction(){
+Node* &head;
+string newdata;
+cout << "Type a new word to add your string:" << endl;
+cin >> newdata;
+Node* newdata = new Node();
+
+
+
+}
+
+void deletingFunction(){
+
+char input;
+
+cout << "Type UNDO for deleting the last word" << endl;
+cin >> input;
+
+if (input = 'UNDO'){
+
+    delete Node();
+}
+
+}
+
+
+int main()
+{
+    char userInput;
+    cout<< "What do you want to do?" << endl;
+    cout << "Type ADD for adding a word or type REMOVE for removing the last word or EXIT for exiting the program" << endl;
+    cin >> userInput;
+
+    while(userInput == 'EXIT'){
+    if(userInput == 'ADD'){
+        addingfunction();
+    }
+    else if(userInput == 'REMOVE'){
+        deletingFunction();
+    }
+    else {
+        cout << "Invalid option" << endl;
+    }
+}
+}
 
