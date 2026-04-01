@@ -1,0 +1,95 @@
+#include <iostream>
+
+using namespace std;
+
+struct Package {
+string packageID;
+string destinationCity;
+int Package[3];
+Package* next;
+int top;
+};
+void createStack(Package *stk){
+stk->top = -1;
+}
+void checkEmpty(){
+return (stk->top == -1);
+}
+
+struct Courier {
+string courierName;
+string vehicleType;
+int arr[5];
+int front = 0;
+int rear = -1;
+};
+void enqueueFunc(int x, int arr[5]){
+if(rear == 5-1){
+    cout << "Queue is full" << endl;
+}
+else {
+    rear++;
+    arr[rear] = x;
+}
+}
+void dequeue(int arr[5]){
+if(front > rear) {
+    cout << "Queue is empty" << endl;
+}
+else {
+    front++;
+}
+}
+void arrivalFunc(Package *stk, int newItem){
+  if(stk->top == 3-1){
+    cout << "Stack is full" << endl;
+    return;
+  }
+stk->top++;
+stk->S[stk->top] = newItem;
+}
+void dispatchFunc(Package *stk){
+int x = stk->top;
+enqueueFunc(int x);
+if(stk->top == 0){
+ cout << "Stack is empty" << endl;
+}
+else {
+    top--;
+}
+}
+void displayStack(int Package[3]){
+
+for(int i = top; i >= 0; i--){
+ cout << Package[3] << endl;
+}
+}
+void displayQueue(int arr[5]){
+for(int i = rear; i >= -1; i--){
+ cout << arr[5] << endl;
+}
+}
+int main()
+{
+int choice = 0;
+while(1){
+    cout << "Press 1 for adding a new package , 2 for adding a new courier , 3 for dispatching, 4 for displaying" << endl;
+    cin >> choice;
+    if (choice == 1){
+        arrivalFunc(Package *stk, int newItem);
+    }
+    else if (choice == 2){
+        enqueueFunc(int x, int arr[5]);
+    }
+    else if (choice == 3) {
+       dispatchFunc(Package *stk);
+    }
+    else if (choice == 4) {
+       displayStack(int Package[3]);
+       displayQueue(int arr[5]);
+    }
+    else {
+        cout << "Invalid Option!" << endl;
+    }
+}
+}
